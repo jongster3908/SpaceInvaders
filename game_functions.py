@@ -220,7 +220,7 @@ def ship_hit(ai_settings, screen, stats, sb, ship, aliens, bullets, alien_bullet
     ship.update()
 
     while ship.dead:
-        screen.fill(ai_settings.intro_bg_color)
+        screen.fill(ai_settings.bg_color)
         ship.blitme()
         pygame.display.flip()
         ship.update()

@@ -29,8 +29,8 @@ class Ufo(pygame.sprite.Sprite):
         self.wait_interval = 500
 
         # sound
-        self.entrance_sound = pygame.mixer.Sound('sounds/ufo-sound.wav')
-        self.death_sound = pygame.mixer.Sound('sounds/ufo-death.wav')
+        self.entrance_sound = pygame.mixer.Sound('sounds/ufo_sound.wav')
+        self.death_sound = pygame.mixer.Sound('sounds/ufo_death.wav')
         self.entrance_sound.set_volume(0.6)
         self.channel = ai_settings.ufo_channel
 

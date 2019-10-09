@@ -142,7 +142,7 @@ class Intro:
 
         # intro music
 
-        self.intro_bgm = mixer.Sound('sounds/pokemon-opening.wav')
+        self.intro_bgm = mixer.Sound('sounds/intro.wav')
 
     def prep_image(self):
         self.title.prep_image()

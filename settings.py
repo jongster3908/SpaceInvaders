@@ -1,7 +1,6 @@
 from pygame import mixer
 from pygame import time
 
-
 class Settings:
     """Stores settings for Alien Invasion"""
     def __init__(self):
@@ -17,7 +16,7 @@ class Settings:
 
         # bullet settings
         self.bullet_speed_factor = None
-        self.bullet_width = 8
+        self.bullet_width = 80
         self.bullet_height = 15
         self.bullet_color = (0, 0, 255)
         self.bullets_allowed = 3
@@ -42,7 +41,7 @@ class Settings:
         self.normal_music_interval = 725
         self.music_interval = self.normal_music_interval
         self.music_speedup = 25
-        self.bgm = mixer.Sound('sounds/pokemon-battle.wav')
+        self.bgm = mixer.Sound('sounds/arcade.wav')
         self.bgm_index = None
         self.last_beat = None
 
@@ -62,7 +61,7 @@ class Settings:
         self.alien_bullet_time = 1000
 
         # How quickly the game speeds up
-        self.speedup_scale = 1.1
+        self.speedup_scale = 1.2
 
         # initialize dynamics
         self.initialize_dynamic_settings()
@@ -97,8 +96,8 @@ class Settings:
             self.last_beat = time.get_ticks()
         elif abs(self.last_beat - time.get_ticks()) > self.music_interval and not self.music_channel.get_busy():
             # Music continuing
-            self.bgm_index = (self.bgm_index + 1) % len(self.bgm)
-            self.music_channel.play(self.bgm[self.bgm_index])
+            self.bgm_index = (self.bgm_index + 1) % (self.bgm.get_length())
+            self.music_channel.play(self.bgm)
             self.last_beat = time.get_ticks()
 
     def stop_bgm(self):

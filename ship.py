@@ -27,8 +27,8 @@ class Ship(pygame.sprite.Sprite):
         self.rect.centerx = self.screen_rect.centerx
         self.rect.bottom = self.screen_rect.bottom
         # sound
-        self.ship_death_sound = pygame.mixer.Sound('sounds/pikachu-dying.wav')
-        self.ship_shoot = pygame.mixer.Sound('sounds/puika.wav')
+        self.ship_death_sound = pygame.mixer.Sound('sounds/ship_death.wav')
+        self.ship_shoot = pygame.mixer.Sound('sounds/player_shoot.wav')
         self.ship_death_sound.set_volume(0.5)
         self.ship_shoot.set_volume(0.5)
         self.channel = ai_settings.ship_channel
