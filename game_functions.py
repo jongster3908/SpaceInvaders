@@ -364,6 +364,7 @@ def startup_screen(ai_settings, game_stats, screen):
     intro = True
 
     while intro:
+        pygame.mixer.Sound.play(menu.intro_bgm)
         play_button.alter_text_color(*pygame.mouse.get_pos())
         hs_button.alter_text_color(*pygame.mouse.get_pos())
         for event in pygame.event.get():
@@ -383,6 +384,7 @@ def startup_screen(ai_settings, game_stats, screen):
         play_button.draw_button()
         pygame.display.flip()
 
+    pygame.mixer.Sound.stop(menu.intro_bgm)
     return True
 
 

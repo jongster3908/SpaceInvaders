@@ -1,3 +1,4 @@
+import pygame
 from pygame.font import Font
 from pygame import display, time, image
 from pygame import mixer
@@ -141,7 +142,6 @@ class Intro:
         self.prep_image()
 
         # intro music
-
         self.intro_bgm = mixer.Sound('sounds/intro.wav')
 
     def prep_image(self):
