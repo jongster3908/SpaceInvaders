@@ -173,12 +173,11 @@ def check_high_score(stats, sb):
         sb.prep_high_score()
 
 
-def update_screen(ai_settings, screen, stats, sb, ship, aliens, alien_bullets, bullets, bunkers, ufo_group, background):
+def update_screen(ai_settings, screen, stats, sb, ship, aliens, alien_bullets, bullets, bunkers, ufo_group):
     """Update images on the screen and flip to new screen"""
     if stats.game_active:
         ufo_event_check(ai_settings, screen, ufo_group)
-    screen.fill(ai_settings.game_bg_color)
-    screen.blit(background.image, background.rect)
+    screen.fill(ai_settings.bg_color)
     # Redraw all bullets
     for bullet in bullets.sprites():
         bullet.draw_bullet()
@@ -201,14 +200,14 @@ def update_screen(ai_settings, screen, stats, sb, ship, aliens, alien_bullets, b
 def get_number_aliens(ai_settings, alien_width):
     """Determine the number of aliens that can fit in a row"""
     available_space_x = ai_settings.screen_width - 2 * alien_width
-    number_aliens_x = int(available_space_x / (2.5 * alien_width))
+    number_aliens_x = int(available_space_x / (2 * alien_width))
     return number_aliens_x
 
 
 def get_number_rows(ai_settings, ship_height, alien_height):
     """Determine the number of rows of aliens that can fit in a row"""
     available_space_y = (ai_settings.screen_height - (4 * alien_height) - ship_height)
-    number_rows = int(available_space_y / (2.5 * alien_height))
+    number_rows = int(available_space_y / (2 * alien_height))
     return number_rows
 
 
@@ -378,7 +377,7 @@ def startup_screen(ai_settings, game_stats, screen):
                     ret_hs = high_score_screen(ai_settings, game_stats, screen)
                     if not ret_hs:
                         return False
-        screen.fill(ai_settings.intro_bg_color)
+        screen.fill(ai_settings.bg_color)
         menu.show_menu()
         hs_button.draw_button()
         play_button.draw_button()

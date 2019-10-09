@@ -14,7 +14,7 @@ class Button:
         self.button_color = (0, 255, 0)
         self.text_color = (255, 255, 255)
         self.alt_color = (0, 255, 0)
-        self.font = Font('fonts/space_invaders.ttf', 48)
+        self.font = Font('fonts/font.ttf', 48)
         self.y_factor = y_factor
 
         # Prep button message
@@ -38,7 +38,7 @@ class Button:
 
     def prep_msg(self, color):
         """Turn msg into a rendered image and center it on the button"""
-        self.msg_image = self.font.render(self.msg, True, color, self.settings.intro_bg_color)
+        self.msg_image = self.font.render(self.msg, True, color, self.settings.bg_color)
         self.msg_image_rect = self.msg_image.get_rect()
         self.msg_image_rect.centerx = (self.settings.screen_width // 2)
         self.msg_image_rect.centery = int(self.settings.screen_height * self.y_factor)
@@ -54,21 +54,21 @@ class EnemyDisplay:
         self.settings = ai_settings
         self.aliens = []
         images = [
-            image.load('images/alien1_1.png'),
-            image.load('images/alien2_1.png'),
-            image.load('images/alien3_1.png'),
-            image.load('images/ufo.png')
+            image.load('images/alien1a.ico'),
+            image.load('images/alien2a.ico'),
+            image.load('images/alien3a.ico'),
+            image.load('images/ufo.ico')
         ]
         for img in images:
             self.aliens.append((img, img.get_rect()))
         self.example_scores = [
-            Subtitle(ai_settings.intro_bg_color, self.screen, ' = ' + str(ai_settings.alien_points['1']),
+            Subtitle(ai_settings.bg_color, self.screen, ' = ' + str(ai_settings.alien_points['1']),
                      text_color=(255, 255, 255)),
-            Subtitle(ai_settings.intro_bg_color, self.screen, ' = ' + str(ai_settings.alien_points['2']),
+            Subtitle(ai_settings.bg_color, self.screen, ' = ' + str(ai_settings.alien_points['2']),
                      text_color=(255, 255, 255)),
-            Subtitle(ai_settings.intro_bg_color, self.screen, ' = ' + str(ai_settings.alien_points['3']),
+            Subtitle(ai_settings.bg_color, self.screen, ' = ' + str(ai_settings.alien_points['3']),
                      text_color=(255, 255, 255)),
-            Subtitle(ai_settings.intro_bg_color, self.screen, ' = ???', text_color=(255, 255, 255))
+            Subtitle(ai_settings.bg_color, self.screen, ' = ???', text_color=(255, 255, 255))
         ]
         self.score_images = []
         self.y_start = y_start
@@ -97,7 +97,7 @@ class Title:
         self.screen = screen
         self.text = text
         self.text_color = text_color
-        self.font = Font('fonts/space_invaders.ttf', text_size)
+        self.font = Font('fonts/font.ttf', text_size)
         self.image = None
         self.image_rect = None
 
@@ -115,7 +115,7 @@ class Subtitle:
         self.screen = screen
         self.text = text
         self.text_color = text_color
-        self.font = Font('fonts/space_invaders.ttf', text_size)
+        self.font = Font('fonts/font.ttf', text_size)
         self.image = None
         self.image_rect = None
 
@@ -135,8 +135,8 @@ class Intro:
         self.screen = screen
 
         # text/image information
-        self.title = Title(settings.intro_bg_color, self.screen, 'PIKACHU', text_size=72)
-        self.subtitle = Subtitle(settings.intro_bg_color, self.screen, 'INVADERS', text_size=62)
+        self.title = Title(settings.bg_color, self.screen, 'SPACE', text_size=72)
+        self.subtitle = Subtitle(settings.bg_color, self.screen, 'INVADERS', text_size=62)
         self.enemy_display = EnemyDisplay(settings, self.screen, self.settings.screen_height // 3)
         self.prep_image()
 

@@ -9,8 +9,7 @@ class Settings:
         self.screen_width = 800
         self.screen_height = 800
         print('Automatic screen resolution: ' + str(self.screen_width) + ' ' + str(self.screen_height))
-        self.intro_bg_color = (0, 0, 0)
-        self.game_bg_color = (255, 255, 255)
+        self.bg_color = (0, 0, 0)
 
         # ship settings
         self.ship_speed_factor = None

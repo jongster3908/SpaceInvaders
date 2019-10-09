@@ -44,8 +44,8 @@ class Alien(pygame.sprite.Sprite):
     def initialize_images(self):
         if self.alien_type == 1:
             self.images = [
-                pygame.image.load('images/alien1_1.png'),
-                pygame.image.load('images/alien1_2.png')
+                pygame.image.load('images/alien1a.ico'),
+                pygame.image.load('images/alien1b.ico')
             ]
             self.death_frames = [
                 pygame.image.load('images/alien_death/alien_purple_death1.png'),
@@ -55,8 +55,8 @@ class Alien(pygame.sprite.Sprite):
             ]
         elif self.alien_type == 2:
             self.images = [
-                pygame.image.load('images/alien2_1.png'),
-                pygame.image.load('images/alien2_2.png')
+                pygame.image.load('images/alien2a.ico'),
+                pygame.image.load('images/alien2b.ico')
             ]
             self.death_frames = [
                 pygame.image.load('images/alien_death/alien_blue_death1.png'),
@@ -66,8 +66,8 @@ class Alien(pygame.sprite.Sprite):
             ]
         else:
             self.images = [
-                pygame.image.load('images/alien3_1.png'),
-                pygame.image.load('images/alien3_2.png')
+                pygame.image.load('images/alien3a.ico'),
+                pygame.image.load('images/alien3b.ico')
             ]
             self.death_frames = [
                 pygame.image.load('images/alien_death/alien_green_death1.png'),

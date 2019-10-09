@@ -64,7 +64,7 @@ class Ufo(pygame.sprite.Sprite):
 
     def prep_score(self):
         score_str = str(self.get_score())
-        self.score_image = self.font.render(score_str, True, (255, 0, 0), self.ai_settings.intro_bg_color)
+        self.score_image = self.font.render(score_str, True, (255, 0, 0), self.ai_settings.bg_color)
 
     def update(self):
         if not self.dead:
