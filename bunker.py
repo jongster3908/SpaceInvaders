@@ -12,7 +12,7 @@ class BunkerBlock(sprite.Sprite):
         self.height = ai_settings.bunker_block_size
         self.width = ai_settings.bunker_block_size
         self.color = ai_settings.bunker_color
-        self.image = pygame.image.load('images/pokeball.png')
+        self.image = pygame.image.load('images/bunker.png')
 
         self.rect = self.image.get_rect()
         self.row = row
