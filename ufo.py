@@ -14,7 +14,7 @@ class Ufo(pygame.sprite.Sprite):
         self.score = None
 
         # images, score text
-        self.image = pygame.image.load('images/ufo.png')
+        self.image = pygame.image.load('images/ufo.ico')
         self.rect = self.image.get_rect()
         self.score_image = None
         self.font = SysFont(None, 32, italic=True)

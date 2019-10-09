@@ -8,7 +8,7 @@ class Ship(pygame.sprite.Sprite):
         self.screen = screen
         self.ai_settings = ai_settings
         # Load ship image and set rect attributes
-        self.ship_image = pygame.image.load('images/pikachu.v1.png')
+        self.ship_image = pygame.image.load('images/ship.ico')
         self.image = self.ship_image
         self.death_images = [
             pygame.image.load('images/ship_death/ship_death1.png'),
